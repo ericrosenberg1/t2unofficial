@@ -1,4 +1,4 @@
-package com.csu.web2app;
+package com.csu.t2unofficial;
 
 import android.content.Context;
 import android.content.Intent;
@@ -10,7 +10,7 @@ import android.webkit.WebViewClient;
 public class WebViewController extends WebViewClient {
 
     public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request, Context context) {
-        if ("google.com".equals(request.getUrl().getHost())) {
+        if ("t2.social".equals(request.getUrl().getHost())) {
 	    // This is my website, so do not override; let my WebView load the page
             return false;
         }

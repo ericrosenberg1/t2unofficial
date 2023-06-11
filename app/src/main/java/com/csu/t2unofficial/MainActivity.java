@@ -1,4 +1,4 @@
-package com.csu.web2app;
+package com.csu.t2unofficial;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;

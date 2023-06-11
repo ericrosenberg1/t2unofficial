@@ -1,4 +1,4 @@
-package com.csu.web2app;
+package com.csu.t2unofficial;
 
 import org.junit.Test;
 
