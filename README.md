@@ -1,12 +1,13 @@
 # t2.social unofficial
-### Forked from web2app
-### Convert any website into android app with ease
+### Forked from web2app by vishwas-r
 
-A simple android studio template project that lets you create an android webview application in minutes. You can use it to create a simple app for your website - an android app that loads your website. This app loads google.com by default, which you can change it to your website. 
+This is an unofficial Android app to use T2 on your mobile device.
 
-### Getting Started
-1. Clone / Download the repo
-2. Open the project in Android Studio
-3. Change google.com to your domain name
-4. Change the app icon as per your need - [Check this article](https://vishwas-r.medium.com/how-to-create-change-android-app-icon-easily-94a56435911a)
-5. Generate apk
+Installation and use instructions.
+#Download the file t2socialunofficial.apk to your Android device. You can find the latest version available in the "Releases" section here on GitHub.
+If you get a notice that this file might be harmful, click “Download anyway” if you trust me.
+#Open the .apk file wherever it is saved on your device. You may have to click to “Allow from this source” for the browser you used to download.
+Click “Install.”
+#If you get the notice “Unfase app blocked (because I’m not a recognized developer), click the arrow for “More Details,” then “Install Anyway.”
+#Open the app t2unofficial.
+#Enjoy!

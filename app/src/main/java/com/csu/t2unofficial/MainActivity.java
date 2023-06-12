@@ -17,7 +17,7 @@ public class MainActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        webView = (WebView) findViewById(R.id.web_view_home);
+        webView = findViewById(R.id.web_view_home);
 
         WebSettings webSettings = webView.getSettings();
         webSettings.setLoadWithOverviewMode(true);
