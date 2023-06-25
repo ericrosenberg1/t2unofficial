@@ -6,7 +6,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.csu.nattukaran"
+        applicationId 'com.csu.t2unofficial'
         minSdk 21
         targetSdk 32
         versionCode 1
