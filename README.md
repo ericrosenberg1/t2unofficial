@@ -1,5 +1,4 @@
 # t2.social unofficial
-### Forked from web2app by vishwas-r
 
 This is an unofficial Android app to use T2 on your mobile device.
 
@@ -14,3 +13,5 @@ Installation and use instructions.
 4. Open the app t2unofficial.
 
 5. Enjoy!
+
+### Forked from web2app by vishwas-r
