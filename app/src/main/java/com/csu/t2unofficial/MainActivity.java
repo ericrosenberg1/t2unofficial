@@ -156,7 +156,7 @@ public class MainActivity extends Activity {
             webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
 
-        webView.loadUrl("https://t2.social/");
+        webView.loadUrl("https://pebble.is/");
     }
 
     private File createImageFile() throws IOException {
