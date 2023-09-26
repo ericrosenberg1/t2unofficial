@@ -1,9 +1,7 @@
 package com.csu.t2unofficial;
 
-import android.annotation.SuppressLint;
-import android.net.http.SslError;
-import android.webkit.SslErrorHandler;
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.ClipData;
@@ -11,6 +9,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.net.http.SslError;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -18,6 +17,7 @@ import android.provider.MediaStore;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.SslErrorHandler;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -47,7 +47,7 @@ public class MainActivity extends Activity {
 
     // Storage Permissions variables
     private static final int REQUEST_EXTERNAL_STORAGE = 1;
-    private static String[] PERMISSIONS_STORAGE = {
+    private static final String[] PERMISSIONS_STORAGE = {
             Manifest.permission.READ_EXTERNAL_STORAGE,
             Manifest.permission.WRITE_EXTERNAL_STORAGE,
             Manifest.permission.CAMERA
@@ -128,22 +128,20 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         verifyStoragePermissions(this);
 
-        webView = (WebView) findViewById(R.id.web_view_home);
+        webView = findViewById(R.id.web_view_home);
         webSettings = webView.getSettings();
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true);
         webSettings.setMinimumFontSize(1);
         webSettings.setMinimumLogicalFontSize(1);
         webSettings.setDomStorageEnabled(true);
-        webSettings.setAppCacheEnabled(true);
         webSettings.setDatabaseEnabled(true);
         webSettings.setSaveFormData(false);
-        webSettings.setSavePassword(false);
         WebSettings webSettings = webView.getSettings();
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setUseWideViewPort(true);
         webSettings.setJavaScriptEnabled(true);
 
-        webSettings.setCacheMode(webSettings.LOAD_CACHE_ELSE_NETWORK);
+        webSettings.setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         webSettings.setJavaScriptEnabled(true);
         webSettings.setLoadWithOverviewMode(true);
         webSettings.setAllowFileAccess(true);
@@ -152,7 +150,7 @@ public class MainActivity extends Activity {
         //if SDK version is greater of 19 then activate hardware acceleration otherwise activate software acceleration
         if (Build.VERSION.SDK_INT >= 19) {
             webView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-        } else if (Build.VERSION.SDK_INT >= 11 && Build.VERSION.SDK_INT < 19) {
+        } else if (Build.VERSION.SDK_INT >= 21 && Build.VERSION.SDK_INT < 21) {
             webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
 
@@ -182,7 +180,7 @@ public class MainActivity extends Activity {
                 mUploadMessage.onReceiveValue(null);
             }
             mUploadMessage = filePath;
-            Log.e("FileCooserParams => ", filePath.toString());
+            Log.e("FileChooserParams => ", filePath.toString());
 
             Intent takePictureIntent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
             if (takePictureIntent.resolveActivity(getPackageManager()) != null) {
